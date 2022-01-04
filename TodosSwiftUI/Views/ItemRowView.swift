@@ -14,18 +14,14 @@ struct ItemRowView: View {
     var priority:String = ""
     
     var body: some View {
-        HStack{
-            Text(priority)
-                .font(.title3)
-            
-            VStack(alignment: .leading) {
-                Text(item)
-                    .font(.headline)
-                
-                Text("\(dateCreated)")
-                    .font(.custom("Ariel", size: 10))
-                    .lineLimit(3)
-            }
+        VStack(alignment: .leading) {
+            Text(priority + " " + item)
+                .font(.title2)
+                .fontWeight(.semibold)
+            Text("\(dateCreated)")
+                .font(.body)
+                .foregroundColor(.black.opacity(0.9))
+                .lineLimit(3)
         }
     }
 }
